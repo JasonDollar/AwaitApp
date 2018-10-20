@@ -47,8 +47,6 @@ class EventItem extends React.Component {
   }
   
 
-
-  // const timeLeft = moment(props.time - now).format('YY DDD H mm ss')
   
   
   render() {

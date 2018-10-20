@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import Header from './components/Header/Header'
 import EventList from './components/EventList/EventList'
-// import moment from 'moment'
 import AddEventForm from './components/AddEventForm/AddEventForm';
 
 class App extends Component {
   state = {
-    events: [
-      
-    ]
+    events: []
   }
-  onEventAdded = (e) => {
+  onEventAdded = (newEvent) => {
     this.setState((prevState) => ({
-      events: [...prevState.events, e]
+      events: [...prevState.events, newEvent]
     }))
   }
   onClick = () => {

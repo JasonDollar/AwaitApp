@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import DateTimePicker from 'react-datetime-picker';
-// import DateTimePicker from 'react-datetime-picker/dist/entry.nostyle'
 import styles from './AddEventForm.module.css'
 
 class AddEventForm extends Component {
@@ -16,9 +15,6 @@ class AddEventForm extends Component {
     })
   }
   onDateChange = (value) => {
-    // this.setState({
-    //   date: value.getTime()
-    // })
     const time = value
     this.setState(() => ({
       date: time,
@@ -37,9 +33,12 @@ class AddEventForm extends Component {
   render() {
     return (
       <div>
-      <input onChange={this.onTitleChange} value={this.state.value}/>
+      <input 
+       className={styles.inputText}
+        onChange={this.onTitleChange} 
+        value={this.state.value}
+      />
       <DateTimePicker 
-        className={styles.inputCalendar}
         onChange={value => {this.onDateChange(value)}}
         value={this.state.date}
         minDate={new Date()}
