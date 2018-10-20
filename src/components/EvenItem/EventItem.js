@@ -1,8 +1,5 @@
 import React from 'react'
-import Moment from 'moment'
-import {
-  extendMoment
-} from 'moment-range'; //usunac pozniej
+
 
 
 class EventItem extends React.Component {
@@ -39,6 +36,7 @@ class EventItem extends React.Component {
   }
 
   componentDidMount() {
+    this.calcDate(this.props.time)
     this.interval = setInterval(() => {
       this.calcDate(this.props.time)
     }, 1000)
@@ -47,6 +45,7 @@ class EventItem extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+  
 
 
   // const timeLeft = moment(props.time - now).format('YY DDD H mm ss')
