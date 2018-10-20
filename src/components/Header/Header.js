@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-      Count time untill your important events
+      <h1>Count time untill your important events</h1>
     </div>
   )
 }
