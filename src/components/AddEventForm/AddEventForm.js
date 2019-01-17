@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DateTimePicker from 'react-datetime-picker';
-import styles from './AddEventForm.module.css'
+import classes from './AddEventForm.module.scss'
 
 class AddEventForm extends Component {
   state = {
@@ -20,6 +20,7 @@ class AddEventForm extends Component {
       date: time,
       timestamp: time ? time.getTime() : null
     }))
+    
   }
   onEventCreate = () => {
     if (this.state.title && this.state.timestamp) {
@@ -28,23 +29,32 @@ class AddEventForm extends Component {
         timestamp: this.state.timestamp
       }
       this.props.onEventAdded(newEvent)
-    }
+    } 
   }
   render() {
     return (
-      <div>
+      <div className={classes.AddEventForm}>
       <input 
-       className={styles.inputText}
+        className={classes.textInput}
         onChange={this.onTitleChange} 
         value={this.state.value}
       />
-      <DateTimePicker 
-        onChange={value => {this.onDateChange(value)}}
-        value={this.state.date}
-        minDate={new Date()}
-      />
+      <div className={classes.datePicker}>
+        <DateTimePicker 
+          onChange={value => {this.onDateChange(value)}}
+          value={this.state.date}
+          minDate={new Date()}
+        />
+      </div>
 
-      <button onClick={this.onEventCreate}>Add event</button>
+      <button 
+        onClick={this.onEventCreate}
+        disabled={!(this.state.title)} 
+        className={classes.addButton}
+      
+      >
+        Add event
+      </button>
       </div>
     )
   }

@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  margin: 30px auto;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #222;
+}
