@@ -29,7 +29,3 @@ class App extends Component {
 }
 
 export default App;
-/*{
-  title: 'RDR2',
-  timestamp: 1548050856924
-} */
