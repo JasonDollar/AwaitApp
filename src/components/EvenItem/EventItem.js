@@ -1,11 +1,12 @@
 import React from 'react'
+import classes from './EventItem.module.scss'
 
 
 
 class EventItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {} 
   }
   
 
@@ -51,10 +52,12 @@ class EventItem extends React.Component {
   
   render() {
     return (
-      <div>
-        {this.props.title}{' '}
+      <div className={classes.EventItem}>
+        <p className={classes.title}>{this.props.title}</p>
+        <p className={classes.time}>{this.state.timeLeft}</p>
         
-        {this.state.timeLeft}
+        
+        
       </div>
     )
   }
